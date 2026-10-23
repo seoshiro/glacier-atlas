@@ -1,0 +1,14 @@
+.expedition-card { width: 100%; color: #143e40; }
+.expedition-card__figure { margin: 0; }
+.expedition-card__image { display: block; width: 100%; height: auto; border: 1px solid #143e40; box-shadow: 12px 14px 0 #d5e0d8; }
+.expedition-card__figure figcaption { margin: 27px 0 24px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; line-height: 1.6; letter-spacing: .035em; color: #44615d; }
+.expedition-card__actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.expedition-card__download, .expedition-card__reset { min-height: 48px; cursor: pointer; font: inherit; }
+.expedition-card__download { display: inline-flex; justify-content: space-between; align-items: center; gap: 28px; padding: 14px 18px; border: 1px solid #143e40; color: #f1f3e9; background: #143e40; font-size: 13px; }
+.expedition-card__download:hover { background: #286265; }
+.expedition-card__download span { font-size: 21px; line-height: 1; }
+.expedition-card__reset { border: 0; border-bottom: 1px solid #7c9990; padding: 8px 0; background: none; color: #385d57; font-size: 12px; }
+.expedition-card__reset:hover { color: #9f3428; border-color: #9f3428; }
+.expedition-card__download:focus-visible, .expedition-card__reset:focus-visible { outline: 3px solid #b83f31; outline-offset: 5px; }
+.expedition-card__status { min-height: 3em; max-width: 60ch; margin: 16px 0 0; color: #44615d; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; line-height: 1.6; }
+@media (max-width: 500px) { .expedition-card__image { box-shadow: 6px 8px 0 #d5e0d8; } .expedition-card__actions { align-items: stretch; gap: 12px; } .expedition-card__download { width: 100%; } }

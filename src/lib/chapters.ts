@@ -1,0 +1,7 @@
+export const chapters = [
+ {id:'moraine', number:'01', name:'The quiet approach', place:'Moraine basin', altitude:2180, distance:'0.0—6.4', day:'DAY 01', quote:'The mountains do not begin at the summit. They begin where the noise ends.', text:'We left the last line of trees before first light. Beyond it, the valley opened into a pale amphitheatre of stone — a landscape slowly remembering the ice.', note:'A rust-red stone in a field of grey. The first thing we chose to remember.', tag:'STONE / SILENCE', x:27, y:73},
+ {id:'traverse', number:'02', name:'Across the blue', place:'The glass traverse', altitude:3040, distance:'6.4—14.8', day:'DAY 02', quote:'Under our feet, a thousand winters. Ahead of us, a single blue line.', text:'The ice held light like old glass. We followed a seam across the glacier, stopping often, not to find our way but to look. The horizon seemed to move with us.', note:'A small pocket of blue, deep enough to hold the whole sky.', tag:'ICE / REFLECTION', x:52, y:50},
+ {id:'horizon', number:'03', name:'The white horizon', place:'Unwritten ridge', altitude:3860, distance:'14.8—21.6', day:'DAY 03', quote:'There was nothing left to reach. Only a little more sky.', text:'At the ridge, the world became a simple thing: snow, air, and the long curve of the earth. We put the map away. Some places are better left unfinished.', note:'One page left blank. For everything that could not be drawn.', tag:'AIR / POSSIBILITY', x:73, y:29},
+] as const;
+export type ChapterIndex = 0 | 1 | 2;
+export type ViewMode = 'landscape' | 'map';

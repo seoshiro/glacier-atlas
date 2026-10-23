@@ -1,0 +1,44 @@
+.terrain {
+  --terrain-sky-top:#e4eeea; --terrain-sky-bottom:#d6e5df; --terrain-ground:#e4ebe5;
+  --terrain-line:#4c8a82; --terrain-grid:#83aaa0; --terrain-contour:#32716f;
+  --terrain-far:#bfd4ca; --terrain-middle:#9cbcb2; --terrain-base:#86a79b;
+  --terrain-ice-light:#c5e4e1; --terrain-ice:#6baeb3; --terrain-crevasse:#416f77;
+  --terrain-route:#a93027; --terrain-map-label:#275d5a;
+  position:absolute; inset:0; overflow:hidden; isolation:isolate;
+}
+.terrain--night {
+  --terrain-sky-top:#102f36; --terrain-sky-bottom:#275253; --terrain-ground:#183c41;
+  --terrain-line:#518b88; --terrain-grid:#4a7777; --terrain-contour:#9fc3b9;
+  --terrain-far:#305c5c; --terrain-middle:#376b68; --terrain-base:#2a5b5c;
+  --terrain-ice-light:#89b7bd; --terrain-ice:#367581; --terrain-crevasse:#193f51;
+  --terrain-route:#fb9a7e; --terrain-map-label:#d5e6dd;
+}
+.terrain__art {width:100%;height:100%;display:block;overflow:visible}
+.terrain__survey{opacity:.13}
+.terrain__landscape,.terrain__map{transition:opacity .45s ease}
+.terrain__map {opacity:0}
+.terrain--map .terrain__landscape {opacity:0}
+.terrain--map .terrain__map {opacity:1}
+.terrain--map .terrain__survey {opacity:.055}
+.terrain__face {stroke:currentColor}
+.terrain__face--0{fill:#365c57;color:#365c57}.terrain__face--1{fill:#426d63;color:#426d63}.terrain__face--2{fill:#507b6e;color:#507b6e}.terrain__face--3{fill:#638c7a;color:#638c7a}.terrain__face--4{fill:#79a28c;color:#79a28c}.terrain__face--5{fill:#91b29c;color:#91b29c}.terrain__face--6{fill:#aac6ae;color:#aac6ae}.terrain__face--7{fill:#bdd0b9;color:#bdd0b9}
+.terrain__face--8{fill:#669b9b;color:#669b9b}.terrain__face--9{fill:#78a9a5;color:#78a9a5}.terrain__face--10{fill:#8cb8af;color:#8cb8af}.terrain__face--11{fill:#9fc7bd;color:#9fc7bd}.terrain__face--12{fill:#b4d5c8;color:#b4d5c8}.terrain__face--13{fill:#c8e1d2;color:#c8e1d2}.terrain__face--14{fill:#d9e9db;color:#d9e9db}.terrain__face--15{fill:#e8f0e3;color:#e8f0e3}.terrain__face--16{fill:#f2f4e8;color:#f2f4e8}.terrain__face--17{fill:#faf9ed;color:#faf9ed}
+.terrain--night .terrain__landscape{filter:brightness(.72) saturate(.7) hue-rotate(16deg)}
+.terrain__markers{position:absolute;inset:0;pointer-events:none}
+.terrain__marker{position:absolute;left:var(--marker-x);top:var(--marker-y);transform:translate(-16.5px,-50%);display:flex;align-items:center;gap:9px;min-height:46px;min-width:46px;padding:5px;border:0;background:transparent;color:#163f3d;text-align:left;cursor:pointer;pointer-events:auto;transition:top .45s ease,left .45s ease;color:var(--terrain-map-label)}
+.terrain__dot{width:23px;height:23px;flex-shrink:0;display:grid;place-items:center;border:1px solid var(--terrain-route);border-radius:50%;background:#eff2e7;box-shadow:0 0 0 5px #eaf0e354;color:#a93027;transition:background .2s ease,box-shadow .2s ease}
+.terrain__dot span{font-family:Arial,sans-serif;font-size:8px;font-weight:700;letter-spacing:-.3px}
+.terrain__marker.is-active .terrain__dot{background:var(--terrain-route);color:#fff;box-shadow:0 0 0 5px #eaf0e38a,0 0 0 6px var(--terrain-route)}
+.terrain--night .terrain__marker.is-active .terrain__dot{color:#14383d;box-shadow:0 0 0 5px #153b4066,0 0 0 6px var(--terrain-route)}
+.terrain__marker-label{display:flex;flex-direction:column;gap:4px;padding:5px 7px;background:#e9efe8eb;box-shadow:0 1px 14px #d3e1d74d;white-space:nowrap}
+.terrain__marker-label>span{font-family:Arial,sans-serif;font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.terrain__marker-label small{font-family:Consolas,'Courier New',monospace;font-size:8px;letter-spacing:.07em}
+.terrain--night .terrain__marker-label{background:#143b40eb;box-shadow:none}
+.terrain__marker:hover .terrain__dot{box-shadow:0 0 0 8px #e9eee38c}
+.terrain__marker:focus-visible{outline:2px solid var(--terrain-route);outline-offset:4px;border-radius:3px}
+.terrain__caption{position:absolute;left:4.7%;right:4.7%;bottom:19px;display:flex;justify-content:space-between;gap:12px;font-family:Consolas,'Courier New',monospace;font-size:9px;letter-spacing:.14em;color:var(--terrain-map-label)}
+.terrain__map-label{font-family:Arial,sans-serif;font-size:12px;letter-spacing:4px}
+.terrain__scale{font-family:Consolas,'Courier New',monospace;font-size:10px;letter-spacing:1px}
+@media(max-width:1000px){.terrain__marker-label>span{font-size:9px}.terrain__marker-label{gap:3px;padding:5px}.terrain__caption{font-size:8px;letter-spacing:.07em}}
+@media(max-width:600px){.terrain__art{width:180%;max-width:none;position:absolute;left:-40%;height:100%}.terrain--map .terrain__art{width:155%;left:-27.5%}.terrain__marker{left:var(--marker-mobile-x);transform:translate(-50%,-16px);gap:4px;flex-direction:column;justify-content:center;align-items:center;text-align:center}.terrain__marker-label{background:#ecf1e9f2;padding:5px 6px}.terrain__marker-label>span{font-size:8px;letter-spacing:.025em}.terrain__marker-label small{font-size:7px}.terrain__dot{width:22px;height:22px}.terrain__caption{left:20px;right:20px;bottom:14px;font-size:7px;letter-spacing:.03em}.terrain__caption span:last-child{max-width:130px;text-align:right;line-height:1.6}}
+@media(prefers-reduced-motion:reduce){.terrain__landscape,.terrain__map,.terrain__marker,.terrain__dot{transition:none}}

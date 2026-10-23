@@ -1,0 +1,402 @@
+[
+  {
+    "name": "mobile-320",
+    "viewport": 320,
+    "documentWidth": 320,
+    "bodyWidth": 320,
+    "headings": [
+      "GLACIER✳",
+      "A line throughthe unfamiliar.",
+      "What the mapcouldn’t hold.",
+      "Bring a littleof it back."
+    ],
+    "buttons": [
+      {
+        "name": "Chapter 01: Moraine basin, 2,180 metres",
+        "width": 90,
+        "height": 66
+      },
+      {
+        "name": "Chapter 02: The glass traverse, 3,040 metres",
+        "width": 117,
+        "height": 66
+      },
+      {
+        "name": "Chapter 03: Unwritten ridge, 3,860 metres",
+        "width": 101,
+        "height": 66
+      },
+      {
+        "name": "Landscape",
+        "width": 96,
+        "height": 36
+      },
+      {
+        "name": "▱ Map",
+        "width": 70,
+        "height": 36
+      },
+      {
+        "name": "Switch to night palette",
+        "width": 69,
+        "height": 46
+      },
+      {
+        "name": "01●DAY 01 / 2,180 MMoraine basin↗",
+        "width": 275,
+        "height": 69
+      },
+      {
+        "name": "02○DAY 02 / 3,040 MThe glass traverse↗",
+        "width": 275,
+        "height": 70
+      },
+      {
+        "name": "03○DAY 03 / 3,860 MUnwritten ridge↗",
+        "width": 275,
+        "height": 70
+      },
+      {
+        "name": "Previous journal chapter",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "name": "Next journal chapter",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "name": "Download expedition card ↗",
+        "width": 275,
+        "height": 51
+      },
+      {
+        "name": "Reset chapter progress",
+        "width": 125,
+        "height": 48
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "mobile-390",
+    "viewport": 390,
+    "documentWidth": 390,
+    "bodyWidth": 390,
+    "headings": [
+      "GLACIER✳",
+      "A line throughthe unfamiliar.",
+      "What the mapcouldn’t hold.",
+      "Bring a littleof it back."
+    ],
+    "buttons": [
+      {
+        "name": "Chapter 01: Moraine basin, 2,180 metres",
+        "width": 90,
+        "height": 66
+      },
+      {
+        "name": "Chapter 02: The glass traverse, 3,040 metres",
+        "width": 117,
+        "height": 66
+      },
+      {
+        "name": "Chapter 03: Unwritten ridge, 3,860 metres",
+        "width": 101,
+        "height": 66
+      },
+      {
+        "name": "Landscape",
+        "width": 100,
+        "height": 36
+      },
+      {
+        "name": "▱ Map",
+        "width": 74,
+        "height": 36
+      },
+      {
+        "name": "Switch to night palette",
+        "width": 73,
+        "height": 46
+      },
+      {
+        "name": "01●DAY 01 / 2,180 MMoraine basin↗",
+        "width": 335,
+        "height": 69
+      },
+      {
+        "name": "02○DAY 02 / 3,040 MThe glass traverse↗",
+        "width": 335,
+        "height": 70
+      },
+      {
+        "name": "03○DAY 03 / 3,860 MUnwritten ridge↗",
+        "width": 335,
+        "height": 70
+      },
+      {
+        "name": "Previous journal chapter",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "name": "Next journal chapter",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "name": "Download expedition card ↗",
+        "width": 335,
+        "height": 51
+      },
+      {
+        "name": "Reset chapter progress",
+        "width": 125,
+        "height": 48
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "tablet-768",
+    "viewport": 768,
+    "documentWidth": 768,
+    "bodyWidth": 768,
+    "headings": [
+      "GLACIER✳",
+      "A line throughthe unfamiliar.",
+      "What the mapcouldn’t hold.",
+      "Bring a littleof it back."
+    ],
+    "buttons": [
+      {
+        "name": "Chapter 01: Moraine basin, 2,180 metres",
+        "width": 132,
+        "height": 46
+      },
+      {
+        "name": "Chapter 02: The glass traverse, 3,040 metres",
+        "width": 164,
+        "height": 46
+      },
+      {
+        "name": "Chapter 03: Unwritten ridge, 3,860 metres",
+        "width": 145,
+        "height": 46
+      },
+      {
+        "name": "Landscape",
+        "width": 109,
+        "height": 40
+      },
+      {
+        "name": "▱ Map",
+        "width": 80,
+        "height": 40
+      },
+      {
+        "name": "Switch to night palette",
+        "width": 80,
+        "height": 50
+      },
+      {
+        "name": "01●DAY 01 / 2,180 MMoraine basin↗",
+        "width": 219,
+        "height": 95
+      },
+      {
+        "name": "02○DAY 02 / 3,040 MThe glass traverse↗",
+        "width": 219,
+        "height": 95
+      },
+      {
+        "name": "03○DAY 03 / 3,860 MUnwritten ridge↗",
+        "width": 219,
+        "height": 95
+      },
+      {
+        "name": "Previous journal chapter",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "name": "Next journal chapter",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "name": "Download expedition card ↗",
+        "width": 231,
+        "height": 51
+      },
+      {
+        "name": "Reset chapter progress",
+        "width": 125,
+        "height": 48
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "desktop-1440",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "bodyWidth": 1440,
+    "headings": [
+      "GLACIER✳",
+      "A line throughthe unfamiliar.",
+      "What the mapcouldn’t hold.",
+      "Bring a littleof it back."
+    ],
+    "buttons": [
+      {
+        "name": "Chapter 01: Moraine basin, 2,180 metres",
+        "width": 145,
+        "height": 46
+      },
+      {
+        "name": "Chapter 02: The glass traverse, 3,040 metres",
+        "width": 181,
+        "height": 46
+      },
+      {
+        "name": "Chapter 03: Unwritten ridge, 3,860 metres",
+        "width": 159,
+        "height": 46
+      },
+      {
+        "name": "Landscape",
+        "width": 109,
+        "height": 40
+      },
+      {
+        "name": "▱ Map",
+        "width": 80,
+        "height": 40
+      },
+      {
+        "name": "Switch to night palette",
+        "width": 80,
+        "height": 50
+      },
+      {
+        "name": "01●DAY 01 / 2,180 MMoraine basin↗",
+        "width": 411,
+        "height": 95
+      },
+      {
+        "name": "02○DAY 02 / 3,040 MThe glass traverse↗",
+        "width": 411,
+        "height": 95
+      },
+      {
+        "name": "03○DAY 03 / 3,860 MUnwritten ridge↗",
+        "width": 411,
+        "height": 95
+      },
+      {
+        "name": "Previous journal chapter",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "name": "Next journal chapter",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "name": "Download expedition card ↗",
+        "width": 231,
+        "height": 51
+      },
+      {
+        "name": "Reset chapter progress",
+        "width": 125,
+        "height": 48
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "landscape-844",
+    "viewport": 844,
+    "documentWidth": 844,
+    "bodyWidth": 844,
+    "headings": [
+      "GLACIER✳",
+      "A line throughthe unfamiliar.",
+      "What the mapcouldn’t hold.",
+      "Bring a littleof it back."
+    ],
+    "buttons": [
+      {
+        "name": "Chapter 01: Moraine basin, 2,180 metres",
+        "width": 132,
+        "height": 46
+      },
+      {
+        "name": "Chapter 02: The glass traverse, 3,040 metres",
+        "width": 164,
+        "height": 46
+      },
+      {
+        "name": "Chapter 03: Unwritten ridge, 3,860 metres",
+        "width": 145,
+        "height": 46
+      },
+      {
+        "name": "Landscape",
+        "width": 109,
+        "height": 40
+      },
+      {
+        "name": "▱ Map",
+        "width": 80,
+        "height": 40
+      },
+      {
+        "name": "Switch to night palette",
+        "width": 80,
+        "height": 50
+      },
+      {
+        "name": "01●DAY 01 / 2,180 MMoraine basin↗",
+        "width": 241,
+        "height": 95
+      },
+      {
+        "name": "02○DAY 02 / 3,040 MThe glass traverse↗",
+        "width": 241,
+        "height": 95
+      },
+      {
+        "name": "03○DAY 03 / 3,860 MUnwritten ridge↗",
+        "width": 241,
+        "height": 95
+      },
+      {
+        "name": "Previous journal chapter",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "name": "Next journal chapter",
+        "width": 42,
+        "height": 42
+      },
+      {
+        "name": "Download expedition card ↗",
+        "width": 231,
+        "height": 51
+      },
+      {
+        "name": "Reset chapter progress",
+        "width": 125,
+        "height": 48
+      }
+    ],
+    "errors": []
+  }
+]
