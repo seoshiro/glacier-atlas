@@ -3,7 +3,8 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const baseUrl = process.env.BASE_URL ?? process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:4186/glacier-atlas/';
-const phase = process.env.GLACIER_VISUAL_PHASE === 'after' ? 'after' : 'before';
+const requestedPhase = process.env.GLACIER_VISUAL_PHASE;
+const phase = requestedPhase === 'after' || requestedPhase === 'live' ? requestedPhase : 'before';
 const evidenceDirectory = path.resolve('qa/screenshots');
 const viewports = [
   { name: 'mobile-320', width: 320, height: 780 },
@@ -44,6 +45,7 @@ test.describe('independent visual evidence', () => {
         viewport: window.innerWidth,
         documentWidth: document.documentElement.scrollWidth,
         bodyWidth: document.body.scrollWidth,
+        assets: [...document.querySelectorAll('script[src],link[rel="stylesheet"][href]')].map(asset => asset.getAttribute('src') || asset.getAttribute('href')),
         headings: [...document.querySelectorAll('h1,h2')].map(heading => heading.textContent?.trim()),
         buttons: [...document.querySelectorAll('button')].map(button => {
           const box = button.getBoundingClientRect();

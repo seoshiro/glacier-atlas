@@ -1,0 +1,142 @@
+verify	Browser checks with runner Chrome	я╗┐2026-10-23T23:13:38.2546638Z ##[group]Run npm run test:e2e
+verify	Browser checks with runner Chrome	2026-10-23T23:13:38.2546953Z ^[[36;1mnpm run test:e2e^[[0m
+verify	Browser checks with runner Chrome	2026-10-23T23:13:38.2608718Z shell: /usr/bin/bash -e {0}
+verify	Browser checks with runner Chrome	2026-10-23T23:13:38.2608973Z env:
+verify	Browser checks with runner Chrome	2026-10-23T23:13:38.2609188Z   CHROME_PATH: /usr/bin/google-chrome
+verify	Browser checks with runner Chrome	2026-10-23T23:13:38.2609471Z   GLACIER_VISUAL_PHASE: after
+verify	Browser checks with runner Chrome	2026-10-23T23:13:38.2609707Z ##[endgroup]
+verify	Browser checks with runner Chrome	2026-10-23T23:13:38.3562879Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:13:38.3563487Z > glacier-atlas@1.0.0 test:e2e
+verify	Browser checks with runner Chrome	2026-10-23T23:13:38.3563950Z > playwright test
+verify	Browser checks with runner Chrome	2026-10-23T23:13:38.3564259Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:13:39.5484590Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:13:39.5485304Z Running 17 tests using 1 worker
+verify	Browser checks with runner Chrome	2026-10-23T23:13:39.5485719Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:13:57.0759520Z   тЬУ   1 tests/accessibility.spec.ts:7:3 тА║ axe names, contrast and semantics at 390px in day, map and night (6.7s)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:01.0952553Z   тЬШ   2 tests/accessibility.spec.ts:7:3 тА║ axe names, contrast and semantics at 1440px in day, map and night (3.5s)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:02.7389353Z   тЬУ   3 tests/accessibility.spec.ts:19:1 тА║ keyboard opens chapters, modes and export with a visible focus indicator (985ms)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:05.8287231Z   тЬУ   4 tests/accessibility.spec.ts:40:1 тА║ reduced motion and touch layouts remain functional without overflow (3.1s)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:06.9686528Z   тЬУ   5 tests/flows.spec.ts:20:1 тА║ chapters persist, browser history works, and reset starts a new reading (1.1s)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:07.6030746Z   тЬУ   6 tests/flows.spec.ts:45:1 тА║ back restores a chapter loaded from saved progress without an initial query (609ms)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:09.4521866Z   тЬУ   7 tests/flows.spec.ts:62:1 тА║ map, landscape and night support repeated actions without losing selected chapter (1.8s)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:10.2189895Z   тЬУ   8 tests/flows.spec.ts:79:1 тА║ SVG card exports repeatedly and contains the fictional expedition label (735ms)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:10.8362580Z   тЬУ   9 tests/flows.spec.ts:104:1 тА║ an interrupted export reports the error and a later attempt succeeds (600ms)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:11.4317876Z   тЬУ  10 tests/flows.spec.ts:127:3 тА║ corrupted storage is recoverable: {broken json (579ms)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:12.0212397Z   тЬУ  11 tests/flows.spec.ts:127:3 тА║ corrupted storage is recoverable: {"version":999,"chapter":2,"visited (579ms)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:12.6200305Z   тЬУ  12 tests/flows.spec.ts:127:3 тА║ corrupted storage is recoverable: {"version":1,"chapter":99,"visited" (584ms)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:13.3657199Z   тЬУ  13 tests/flows.spec.ts:139:1 тА║ denied browser storage leaves the whole expedition usable (733ms)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:13.9366011Z   тЬУ  14 tests/flows.spec.ts:154:1 тА║ unknown chapter hashes do not break the atlas (552ms)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:14.7971868Z   тЬУ  15 tests/flows.spec.ts:163:1 тА║ the atlas and route stay usable when WebGL is unavailable (841ms)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:22.2519771Z   тЬУ  16 tests/visual.spec.ts:17:3 тА║ independent visual evidence тА║ responsive narrative, readable controls, and reduced-motion captures (7.4s)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.0093430Z   тЬУ  17 tests/visual.spec.ts:69:3 тА║ independent visual evidence тА║ map, night palette, touch selection, and visible keyboard focus (4.7s)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1238820Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1243543Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1254965Z   1) tests/accessibility.spec.ts:7:3 тА║ axe names, contrast and semantics at 1440px in day, map and night 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1255695Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1255866Z     Error: [
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1256242Z       {
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1256634Z         "id": "color-contrast",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1257022Z         "impact": "serious",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1257590Z         "nodes": [
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1257969Z           {
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1258310Z             "target": [
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1258960Z               ".is-active > .terrain__dot[aria-hidden=\"true\"] > span"
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1259552Z             ],
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1260651Z             "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #14383d, background color: #e37b64, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1"
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1261682Z           }
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1262215Z         ]
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1262410Z       }
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1262602Z     ]
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1262710Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1262907Z     expect(received).toEqual(expected) // deep equality
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1263158Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1263271Z     - Expected  -  1
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1263531Z     + Received  + 58
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1263668Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1263755Z     - Array []
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1263971Z     + Array [
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1264174Z     +   Object {
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1264826Z     +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1265578Z     +     "help": "Elements must meet minimum color contrast ratio thresholds",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1266236Z     +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1266764Z     +     "id": "color-contrast",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1267049Z     +     "impact": "serious",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1267707Z     +     "nodes": Array [
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1268123Z     +       Object {
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1268523Z     +         "all": Array [],
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1268857Z     +         "any": Array [
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1269094Z     +           Object {
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1269349Z     +             "data": Object {
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1269635Z     +               "bgColor": "#e37b64",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1269939Z     +               "contrastRatio": 4.38,
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1270285Z     +               "expectedContrastRatio": "4.5:1",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1270622Z     +               "fgColor": "#14383d",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1270927Z     +               "fontSize": "6.0pt (8px)",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1271233Z     +               "fontWeight": "bold",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1271526Z     +               "messageKey": null,
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1271783Z     +             },
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1272031Z     +             "id": "color-contrast",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1272329Z     +             "impact": "serious",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1273215Z     +             "message": "Element has insufficient color contrast of 4.38 (foreground color: #14383d, background color: #e37b64, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1274029Z     +             "relatedNodes": Array [
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1274295Z     +               Object {
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1274752Z     +                 "html": "<span class=\"terrain__dot\" aria-hidden=\"true\"><span>01</span></span>",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1275571Z     +                 "target": Array [
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1276276Z     +                   ".is-active > .terrain__dot[aria-hidden=\"true\"]",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1276624Z     +                 ],
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1276846Z     +               },
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1277065Z     +             ],
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1277269Z     +           },
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1277793Z     +         ],
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1278095Z     +         "failureSummary": "Fix any of the following:
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1278987Z     +   Element has insufficient color contrast of 4.38 (foreground color: #14383d, background color: #e37b64, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1279755Z     +         "html": "<span>01</span>",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1280050Z     +         "impact": "serious",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1280325Z     +         "none": Array [],
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1280581Z     +         "target": Array [
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1280928Z     +           ".is-active > .terrain__dot[aria-hidden=\"true\"] > span",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1281277Z     +         ],
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1281477Z     +       },
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1281673Z     +     ],
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1281873Z     +     "tags": Array [
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1282187Z     +       "cat.color",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1282450Z     +       "wcag2aa",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1282670Z     +       "wcag143",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1282876Z     +       "TTv5",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1283244Z     +       "TT13.c",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1283453Z     +       "EN-301-549",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1283671Z     +       "EN-9.1.4.3",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1283981Z     +       "ACT",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1284328Z     +       "RGAAv4",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1284712Z     +       "RGAA-3.2.1",
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1285108Z     +     ],
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1285445Z     +   },
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1285772Z     + ]
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1285963Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1286435Z       12 |       if (state === 'night') await page.getByTestId('night-toggle').click();
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1289758Z       13 |       const result = await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1291627Z     > 14 |       expect(result.violations, JSON.stringify(result.violations.map(v => ({ id:v.id, impact:v.impact, nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary})) })), null, 2)).toEqual([]);
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1292734Z          |                                                                                                                                                                                          ^
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1293207Z       15 |     }
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1293411Z       16 |   });
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1293606Z       17 | }
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1294034Z         at /home/runner/work/glacier-atlas/glacier-atlas/tests/accessibility.spec.ts:14:186
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1294406Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1294922Z     attachment #1: screenshot (image/png) тФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФА
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1295661Z     test-results/accessibility-axe-names-co-35592-1440px-in-day-map-and-night/test-failed-1.png
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1296441Z     тФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФА
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1296743Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1297161Z     Error Context: test-results/accessibility-axe-names-co-35592-1440px-in-day-map-and-night/error-context.md
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1297861Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1298301Z     attachment #3: trace (application/zip) тФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФА
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1298991Z     test-results/accessibility-axe-names-co-35592-1440px-in-day-map-and-night/trace.zip
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1299451Z     Usage:
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1299567Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1300014Z         npx playwright show-trace test-results/accessibility-axe-names-co-35592-1440px-in-day-map-and-night/trace.zip
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1300501Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1300853Z     тФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФА
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1301351Z 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1301440Z   1 failed
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1301992Z     tests/accessibility.spec.ts:7:3 тА║ axe names, contrast and semantics at 1440px in day, map and night 
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1302488Z   16 passed (48.2s)
+verify	Browser checks with runner Chrome	2026-10-23T23:14:27.1959642Z ##[error]Process completed with exit code 1.

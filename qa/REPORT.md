@@ -26,8 +26,8 @@ The ECC-derived Windows engineering skill supplied instructions only; it is not 
 | ESLint | PASS |
 | Unit tests | PASS: 12 across progress/export, navigation and terrain geometry |
 | Production build | PASS |
-| Functional / accessibility browser suite | PASS: 15 in 24.6 seconds |
-| Independent final visual suite | PASS: 2 in 16.6 seconds |
+| Functional / accessibility browser suite | PASS: 16 in 24.8 seconds after the CI contrast fix |
+| Independent final visual suite | PASS: 2 in 15.4 seconds after the CI contrast fix |
 | Axe | Zero violations in six combinations: 390/1440px × day/map/night |
 | Responsive | 320×780, 390×844, 768×1024, 1440×1000, 844×390; no overflow and marker labels inside viewport |
 | Runtime | No captured console, page, failed-request or HTTP errors in covered flows |
@@ -48,12 +48,12 @@ Six sequential fresh-context samples, three each at 1440×1000 and 390×844, DPR
 
 | Metric | Desktop median | Narrow viewport median |
 |---|---:|---:|
-| Synthetic LCP | 292 ms | 248 ms |
-| Load event end | 80.0 ms | 75.8 ms |
-| JS heap | 4.20 MB | 4.21 MB |
-| Initial transferred document/resources | 88,405 bytes | 88,405 bytes |
+| Synthetic LCP | 284 ms | 276 ms |
+| Load event end | 74.2 ms | 84.4 ms |
+| JS heap | 4.20 MB | 4.20 MB |
+| Initial transferred document/resources | 88,399 bytes | 88,399 bytes |
 
-No startup long task was observed in these samples. All 24 automation click-to-two-frame observations were 41.65–114.40ms including Playwright, scrolling and frame scheduling; this is not INP. SVG content may not be the LCP candidate. The art author separately measured shared contour samples reducing identical Node geometry generation from about 132–148ms to 16–29ms; no whole-site comparative speedup is claimed.
+No startup long task was observed in these samples. All 24 automation click-to-two-frame observations were 41.46–114.97ms including Playwright, scrolling and frame scheduling; this is not INP. SVG content may not be the LCP candidate. The art author separately measured shared contour samples reducing identical Node geometry generation from about 132–148ms to 16–29ms; no whole-site comparative speedup is claimed. The previous samples are retained in `performance-precontrast-fix.json`.
 
 No external images/fonts, backend or analytics requests exist. Geometry is computed once; the SVG is static. CSS transitions are finite and reduced motion disables them. There is no active rendering loop to stop offscreen/hidden and no DPR-sized GPU or Canvas allocation.
 
@@ -62,6 +62,12 @@ No external images/fonts, backend or analytics requests exist. Geometry is compu
 Production audit passed with zero advisories (`dependency-audit.json`). The full audit found dev-only Vitest/mocker/tinypool advisories (`dependency-audit-before.json`), prompting an explicit Vitest update; final audit result is recorded in `dependency-audit-all.json` and the final release update below. npm audit sends dependency names/versions to the npm registry advisory endpoint. No new account, key, OAuth flow or hosted scanner was added.
 
 Vitest was upgraded from 3.2.7 to 5.0.5. The final full audit exits 0 with **zero advisories across production and development dependencies**. Lint, types, all 12 units and production build passed after the update. Runtime JS/CSS asset bytes and hashes are unchanged, so the covered local browser/performance evidence still targets the exact application bundle.
+
+## CI-discovered contrast defect
+
+The first CI run, [40038410506](https://github.com/seoshiro/glacier-atlas/actions/runs/40038410506), passed 16 of 17 browser tests and blocked deployment on a real 1440px night-palette contrast issue. While the active marker background animated from day red to night peach, its number changed to dark ink immediately. An intermediate frame measured 4.38:1 against the required 4.5:1. Raw output is retained in `ci-first-failure.log`; this was not classified as a GPU warning or waived.
+
+The background transition was removed from the marker so text/background palette colors change atomically; the finite shadow transition remains. A new regression computes actual WCAG contrast on every sampled animation frame during four rapid palette reversals, interrupting the old 200ms transition. All 16 owned functional/accessibility checks and both independent visual checks passed after this fix. Local measurements were rerun on the new assets; the CI rerun remains a release gate.
 
 Source inspection covered validated storage and URL parsing, React text rendering, static XML escaping, safe self-contained SVG data/downloads, bounded Blob URL revocation, dependency scripts, no secrets, no arbitrary HTML sink and scoped CI permissions. This is a proportionate review, not a claim of complete security.
 

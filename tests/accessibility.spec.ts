@@ -37,6 +37,37 @@ test('keyboard opens chapters, modes and export with a visible focus indicator',
   expect(download.suggestedFilename()).toMatch(/\.svg$/);
 });
 
+test('active marker text keeps AA contrast through rapid interrupted palette transitions', async ({ page }) => {
+  await page.goto(appPath);
+  for (let direction=0; direction<4; direction++) {
+    const ratios = await page.evaluate(() => new Promise<number[]>(resolve => {
+      const control = document.querySelector<HTMLButtonElement>('[data-testid="night-toggle"]')!;
+      const dot = document.querySelector<HTMLElement>('.terrain__marker.is-active .terrain__dot')!;
+      const text = dot.querySelector<HTMLElement>('span')!;
+      const luminance = (color:string) => {
+        const values = color.match(/[\d.]+/g)!.slice(0,3).map(Number).map(channel => {
+          const value = channel/255;
+          return value <= 0.04045 ? value/12.92 : ((value+0.055)/1.055)**2.4;
+        });
+        return values[0]*0.2126+values[1]*0.7152+values[2]*0.0722;
+      };
+      const values:number[] = [];
+      control.click();
+      const start=performance.now();
+      const sample=()=>{
+        const fg=luminance(getComputedStyle(text).color);
+        const bg=luminance(getComputedStyle(dot).backgroundColor);
+        values.push((Math.max(fg,bg)+0.05)/(Math.min(fg,bg)+0.05));
+        if(performance.now()-start < 90) requestAnimationFrame(sample);
+        else resolve(values);
+      };
+      sample();
+    }));
+    expect(ratios.length).toBeGreaterThan(1);
+    expect(Math.min(...ratios), `Minimum sampled marker contrast in palette direction ${direction}: ${Math.min(...ratios)}`).toBeGreaterThanOrEqual(4.5);
+  }
+});
+
 test('reduced motion and touch layouts remain functional without overflow', async ({ browser, baseURL }) => {
   for (const size of [{width:320,height:740},{width:390,height:844},{width:768,height:1024},{width:844,height:390}]) {
     const context = await browser.newContext({baseURL,viewport:size,hasTouch:true,reducedMotion:'reduce',deviceScaleFactor:1});

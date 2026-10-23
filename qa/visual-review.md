@@ -43,10 +43,16 @@ Two visual follow-ups were reported from this expanded inspection:
 
 ## Final local candidate review
 
-PASS — the final local visual suite completed **2/2 tests in 16.6 seconds**, against candidate assets `index-CFcPs5b4.css` and `index-CE6vWiNw.js`. The refreshed after screenshots visually confirm that the desktop map's third marker is clear below the smaller wordmark and all 320-pixel marker names fit within the viewport.
+PASS — after the final contrast correction, the local visual suite completed **2/2 tests in 15.4 seconds**, against candidate assets `index-BDAJRPD0.css` and `index-BZHl98rt.js`. Loaded asset URLs were recorded at all five sizes in `screenshots/after-responsive-measurements.json`. The refreshed after screenshots visually confirm that the desktop map's third marker is clear below the smaller wordmark and all 320-pixel marker names fit within the viewport.
 
 The new marker-label inset assertions passed at all five sizes. At 320 pixels, the first label begins at 11.48 pixels and the third ends at 310.77 pixels. No document overflow, lazy image failures, or runtime `pageerror` events occurred. Map, night palettes, touch selection, visible keyboard focus, skip navigation and Enter activation passed again.
 
 All proven P2 findings and the mobile typography P3 recommendation above are resolved in the final local candidate. No P1 or P2 visual findings remain in the covered viewports and states. Original before screenshots remain unchanged; after screenshots represent this final candidate.
+
+## CI contrast correction
+
+The first GitHub Actions run was a real failure: 16 browser tests passed and the 1440-pixel axe state test failed. The preserved raw log, `ci-first-failure.log`, reported the active night marker number at **4.38:1**, foreground `#14383d` on an intermediate background `#e37b64`, below the required 4.5:1. A background-color transition was temporarily combining the new text color with an intermediate palette color.
+
+The integrator removed that background-color transition so marker text and background change together. The accessibility assertion remained intact. Code/performance/security QA reported its corrected 16-test browser suite passing before this role refreshed the final visual evidence. This role's 2-test visual suite passed afterward; the marker appearance and layout remain clear. A new CI result is still required before calling the release deployed.
 
 Live exact-release review is pending. Automated Chrome results do not constitute physical device testing or a human usability study.
