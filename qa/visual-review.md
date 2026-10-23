@@ -53,6 +53,18 @@ All proven P2 findings and the mobile typography P3 recommendation above are res
 
 The first GitHub Actions run was a real failure: 16 browser tests passed and the 1440-pixel axe state test failed. The preserved raw log, `ci-first-failure.log`, reported the active night marker number at **4.38:1**, foreground `#14383d` on an intermediate background `#e37b64`, below the required 4.5:1. A background-color transition was temporarily combining the new text color with an intermediate palette color.
 
-The integrator removed that background-color transition so marker text and background change together. The accessibility assertion remained intact. Code/performance/security QA reported its corrected 16-test browser suite passing before this role refreshed the final visual evidence. This role's 2-test visual suite passed afterward; the marker appearance and layout remain clear. A new CI result is still required before calling the release deployed.
+The integrator removed that background-color transition so marker text and background change together. The accessibility assertion remained intact. Code/performance/security QA reported its corrected 16-test browser suite passing before this role refreshed the final visual evidence. This role's corrected-candidate visual suite passed **2/2 in 15.4 seconds** with **`index-BDAJRPD0.css` and `index-BZHl98rt.js`**; the marker appearance and layout remain clear. The subsequent corrected CI run **40039041368** passed verification and deployment, including 18 browser tests, as recorded in `ci-success.json`.
 
-Live exact-release review is pending. Automated Chrome results do not constitute physical device testing or a human usability study.
+Intermediate after screenshots were refreshed after the fixes; all current `after-*` files show the corrected candidate. The earlier findings document observed defects and their resolution, while the original `before-*` baseline files remain preserved.
+
+## Live exact-release visual review
+
+**PASS — 2/2 independent visual tests in 19.2 seconds** at [the deployed GLACIER atlas](https://seoshiro.github.io/glacier-atlas/), after corrected CI deployment. Deployment source SHA: **`bbe7ffb8847a9ebf600f03e9d8ebc8b476c44a2d`**.
+
+The actual live site was opened in isolated Chrome contexts at 320 × 780, 390 × 844, 768 × 1024, 1440 × 1000, and 844 × 390. Screenshots were captured and inspected for the terrain, title, route labels, full narrative, journal, and loaded keepsake card. At 390 and 1440 pixels, the live checks additionally captured map/day, map/night, landscape/night, touch chapter selection, visible skip-link focus, skip navigation, and keyboard chapter activation. Reduced-motion preference and device scale factor 1 were used throughout this visual matrix.
+
+All five contexts loaded **`/glacier-atlas/assets/index-BZHl98rt.js`** and **`/glacier-atlas/assets/index-BDAJRPD0.css`**, matching the final local visual candidate. The integrator's separate byte-level exact-release comparison is recorded in `live-integrity.json`. The visual test records DOM asset URLs in `screenshots/live-responsive-measurements.json`; it does not substitute filename equality for byte-hash verification.
+
+There was no horizontal document overflow, cropped marker label, unloaded lazy card image, or browser runtime `pageerror` in any live viewport. The original P2 text/marker collisions, control/caption collisions, and narrow-screen label crop are absent from the final live screenshots. No P1 or P2 visual findings remain in the covered states. Nineteen `live-*` screenshot/measurement files preserve the deployed evidence separately from original before and local after captures.
+
+Automated Chrome results do not constitute physical device testing or a human usability study. This role did not run Safari, Firefox, or assistive-technology software. No remaining blocker affects the completed visual review.

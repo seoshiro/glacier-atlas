@@ -1,6 +1,6 @@
 # Independent code, performance and security review
 
-Status: final local production-preview functional, accessibility and bounded performance checks PASS; live deployed checks pending. This file records checks actually performed; unrun checks remain NOT TESTED.
+Status: final local and deployed functional, accessibility and bounded performance checks PASS. This file records checks actually performed; unrun checks remain NOT TESTED.
 
 ## Scope and method
 
@@ -30,7 +30,7 @@ The integrator's full dependency audit found development-only Vitest 3.2.7 advis
 
 The first CI run on source `88bcc7a47bfefe1bc907f6d55baed8af146bcb3b` failed **1 of 17 browser tests** and blocked deployment. This was a real P2 accessibility defect. The 1440px night-palette axe check sampled the active terrain marker during its background-color transition: foreground `#14383d`, intermediate background `#e37b64`, contrast **4.38:1**, below the 4.5:1 AA threshold for the marker's 8px bold text. Raw evidence is preserved in `qa/ci-first-failure.log`; this role read the exact failing node and color values.
 
-The integrator removed the marker's background-color transition, so foreground and background palette colors switch together; the decorative box-shadow transition remains. No axe rule, threshold or assertion was weakened, and no wait was added to skip the defective frames. A dedicated independent regression now samples actual computed text/background contrast on successive animation frames through four quick day/night reversals, each after 90ms so any previous 200ms transition would be interrupted. Every sampled ratio must remain at least 4.5:1. This regression and the unchanged axe checks pass locally on the corrected runtime. Corrected CI and live checks are recorded below when available.
+The integrator removed the marker's background-color transition, so foreground and background palette colors switch together; the decorative box-shadow transition remains. No axe rule, threshold or assertion was weakened, and no wait was added to skip the defective frames. A dedicated independent regression now samples actual computed text/background contrast on successive animation frames through four quick day/night reversals, each after 90ms so any previous 200ms transition would be interrupted. Every sampled ratio must remain at least 4.5:1. This regression and the unchanged axe checks pass locally and on the deployed site. The corrected CI run [40039041368](https://github.com/seoshiro/glacier-atlas/actions/runs/40039041368) passed verification and deployment, including all 18 browser tests, as reported by the integrator.
 
 ## Automated checks
 
@@ -46,7 +46,9 @@ The integrator removed the marker's background-color transition, so foreground a
 | Reduced motion / touch at 320, 390, 768 and landscape 844px | PASS | Real Chrome touch contexts, functional controls and no document horizontal overflow |
 | No-WebGL rendering and interaction | PASS | WebGL contexts/APIs disabled; SVG scene, chapters and map work without errors |
 | Cold isolated-context performance measurements | PASS | Six final samples in `qa/performance-local.json` |
-| Live deployed E2E and hashes | NOT TESTED | Awaiting deployment |
+| Live deployed E2E | PASS | Owned 16/16 in 34.1s on the deployed site |
+| Live asset names and decoded sizes | PASS | Browser resource entries match final local JS/CSS names and decoded bytes |
+| Live asset body hash verification | Integrator evidence | Separate HTTP integrity verification; this role measured browser resources, not remote-body hashes |
 
 Initial local browser command: `BASE_URL=http://127.0.0.1:4186/glacier-atlas/ node node_modules/@playwright/test/cli.js test tests/flows.spec.ts tests/accessibility.spec.ts --workers=1`. Result: **14 passed in 22.3 seconds**. It targeted the built production preview. A preceding readiness-race attempt exited before launching browser tests because a duplicate dev server could not bind the occupied port; it is not counted as a product failure or a passing check.
 
@@ -76,6 +78,33 @@ Measured local release assets:
 - `index-BDAJRPD0.css`: 23,284 raw bytes; SHA-256 `e75039e67b4df1303817c10e5781e130cbfc653a3395089bf6034926974e0b7c`.
 - A 1,118,243-byte JavaScript source map is also generated but was not fetched during normal page loading. Its hash is retained in the raw measurement file.
 
+## Deployed verification
+
+Target: [GLACIER](https://seoshiro.github.io/glacier-atlas/), deployed source SHA `bbe7ffb8847a9ebf600f03e9d8ebc8b476c44a2d`. The integrator confirmed deployment through GitHub Actions before these checks began. The owned 16-test functional/accessibility suite passed **16/16 in 34.1 seconds** in one worker. Axe reported zero violations across 390/1440px × day/map/night. The frame contrast regression, keyboard/focus, touch/reduced motion, no-WebGL, persisted and corrupted/denied storage, browser history, reset, repeated SVG downloads and interrupted export recovery all passed. Flow error listeners remained empty.
+
+Live commands used the same existing Chrome and isolated contexts as local verification:
+
+```powershell
+$env:BASE_URL='https://seoshiro.github.io/glacier-atlas/'
+node node_modules/@playwright/test/cli.js test tests/flows.spec.ts tests/accessibility.spec.ts --workers=1
+node scripts/measure-performance.mjs https://seoshiro.github.io/glacier-atlas/ qa/performance-live.json
+```
+
+Live measurements use a normal, unthrottled HTTPS connection. Each browser context has fresh browser storage/cache, but this does not assert a cold GitHub CDN cache. The same three-sample viewport-only, DPR 1, reduced-motion, shared Windows host conditions apply. Raw evidence is in `qa/performance-live.json`.
+
+| Live metric | 1440×1000, three samples | 390×844, three samples |
+|---|---:|---:|
+| Synthetic LCP, median (range), ms | 1,024 (780–1,240) | 732 (712–768) |
+| Load event end, median, ms | 739.7 | 510.1 |
+| JS heap used, median, bytes | 4,217,416 | 4,124,104 |
+| Initial transferred document + resources, bytes | 88,479 each | 88,479 each |
+| Observed startup long tasks | One: 52ms in run 3 | Two: 56ms in runs 2 and 3 |
+| Errors / failed requests / HTTP errors | 0 | 0 |
+
+All six main-document responses were HTTP 200. All 24 bounded click-to-two-frame observations ranged from 41.74 to 130.82ms, with the same automation/scroll/frame overhead limitations; these are not INP measurements. The three observed short startup long tasks are retained in the raw report rather than filtered out. No comparative performance improvement is claimed.
+
+Browser resource entries load `assets/index-BZHl98rt.js` (251,775 decoded bytes) and `assets/index-BDAJRPD0.css` (23,284 decoded bytes), matching the final local runtime asset names and sizes. The integrator performs separate exact remote-body SHA-256 checks. No source map was requested during normal live page loading.
+
 ## Limits
 
-No unresolved P1/P2 issue is proven in this role's reviewed code or local browser results. Static-app review is proportionate to the absence of server endpoints, accounts, payment, API secrets or arbitrary user content. Dependency audit and CI outcomes are recorded by the integrator; live artifact checks are pending release. Axe covers machine-testable rules. Visual judgment is provided by the separate visual reviewer. Physical devices, Safari, Firefox, throttled mobile CPUs and field performance are NOT TESTED.
+No unresolved P1/P2 issue is proven in this role's reviewed code or final local/live browser results. Static-app review is proportionate to the absence of server endpoints, accounts, payment, API secrets or arbitrary user content. Dependency audit, CI and remote body-hash outcomes are recorded by the integrator. Axe covers machine-testable rules. Visual judgment is provided by the separate visual reviewer. Physical devices, Safari, Firefox, throttled mobile CPUs and field performance are NOT TESTED.

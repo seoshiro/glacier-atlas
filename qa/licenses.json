@@ -1,0 +1,107 @@
+{
+  "originalAssets": "All site art, text and UI are original GLACIER assets licensed MIT.",
+  "packages": [
+    {
+      "name": "react",
+      "version": "19.3.1",
+      "license": "MIT",
+      "scope": "runtime"
+    },
+    {
+      "name": "react-dom",
+      "version": "19.3.1",
+      "license": "MIT",
+      "scope": "runtime"
+    },
+    {
+      "name": "@axe-core/playwright",
+      "version": "4.14.0",
+      "license": "MPL-2.0",
+      "scope": "development"
+    },
+    {
+      "name": "@eslint/js",
+      "version": "9.39.5",
+      "license": "MIT",
+      "scope": "development"
+    },
+    {
+      "name": "@playwright/test",
+      "version": "1.64.1",
+      "license": "Apache-2.0",
+      "scope": "development"
+    },
+    {
+      "name": "@types/node",
+      "version": "24.19.2",
+      "license": "MIT",
+      "scope": "development"
+    },
+    {
+      "name": "@types/react",
+      "version": "19.3.0",
+      "license": "MIT",
+      "scope": "development"
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "19.3.0",
+      "license": "MIT",
+      "scope": "development"
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "version": "5.2.0",
+      "license": "MIT",
+      "scope": "development"
+    },
+    {
+      "name": "eslint",
+      "version": "9.39.5",
+      "license": "MIT",
+      "scope": "development"
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "version": "7.1.1",
+      "license": "MIT",
+      "scope": "development"
+    },
+    {
+      "name": "eslint-plugin-react-refresh",
+      "version": "0.4.26",
+      "license": "MIT",
+      "scope": "development"
+    },
+    {
+      "name": "globals",
+      "version": "16.5.0",
+      "license": "MIT",
+      "scope": "development"
+    },
+    {
+      "name": "typescript",
+      "version": "5.9.3",
+      "license": "Apache-2.0",
+      "scope": "development"
+    },
+    {
+      "name": "typescript-eslint",
+      "version": "8.72.0",
+      "license": "MIT",
+      "scope": "development"
+    },
+    {
+      "name": "vite",
+      "version": "7.3.7",
+      "license": "MIT",
+      "scope": "development"
+    },
+    {
+      "name": "vitest",
+      "version": "5.0.5",
+      "license": "MIT",
+      "scope": "development"
+    }
+  ]
+}

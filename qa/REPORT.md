@@ -4,7 +4,7 @@
 
 GLACIER is a complete static portfolio experience in an isolated workspace. Its four narrative sections move from original alpine terrain through a three-chapter route to field notes and an exportable card. Terrain, elevations, distances, places and expedition are explicitly fictional.
 
-No unresolved P1/P2 application finding remains from the covered local checks. Release CI and live deployment evidence will be added after publication.
+No unresolved P1/P2 application finding remains from the covered checks. Corrected CI [40039041368](https://github.com/seoshiro/glacier-atlas/actions/runs/40039041368) passed all 18 browser tests and deployed the site successfully. Live integrity returned HTTP 200 and byte-for-byte matching favicon, JS and CSS. Independent live flow/performance and visual evidence is recorded below after completion.
 
 ## Five actual roles
 
@@ -74,5 +74,24 @@ Source inspection covered validated storage and URL parsing, React text renderin
 ## Release and limits
 
 Target: [public repository](https://github.com/seoshiro/glacier-atlas), [free GitHub Pages site](https://seoshiro.github.io/glacier-atlas/). GitHub Actions requires lint, types, units, production build and the one-worker Chrome suite before publishing. Existing runner Chrome is used without apt installation. Exact deployed bytes are checked against local `dist` by `scripts/verify-integrity.mjs` and recorded in `live-integrity.json` after deployment.
+
+The corrected application release is `bbe7ffb8847a9ebf600f03e9d8ebc8b476c44a2d`; `ci-success.json` preserves its successful verification and deployment jobs. Later QA evidence commits do not change application sources. The final workflow head identifies the latest rebuilt deployment; its assets are compared again before handoff.
+
+| Deployed asset | SHA-256 matched to local build |
+|---|---|
+| `index-BZHl98rt.js` (251,775 bytes) | `0a2535bcbe667d5980d0bef9063d4971f047f489a6f114cd7884486b12fd1973` |
+| `index-BDAJRPD0.css` (23,284 bytes) | `e75039e67b4df1303817c10e5781e130cbfc653a3395089bf6034926974e0b7c` |
+
+Installed direct dependency license metadata was checked in `licenses.json`; all original assets are MIT licensed and no external stock assets or fonts are fetched.
+
+## Live verification
+
+The published site passed the independent 16-test functional/accessibility suite in **34.1 seconds**. This repeated storage corruption/denial, browser history, reset, repeated/interrupted SVG download, keyboard/touch/reduced motion, six axe states, sampled rapid-transition contrast and no-WebGL checks. Error listeners remained empty. The initial successful CI used preinstalled Linux Chrome and passed all 18 E2E tests, without disabling contrast or installing apt dependencies.
+
+`performance-live.json` records six fresh isolated Windows Chrome contexts, three at each viewport, on the normal unthrottled network. All returned HTTP 200 and the expected asset names. Median synthetic LCP was **1,024ms at 1440×1000** and **732ms at 390×844**; load event end medians were 739.7ms and 510.1ms. Initial transferred document/resources totalled 88,479 bytes in each sample. The bounded automation click metric was 41.74–130.82ms, not INP.
+
+Three brief startup long tasks were observed live: 52ms in desktop sample 3, and 56ms in narrow samples 2 and 3. No console, page, request or HTTP error or overflow occurred. These shared-host synthetic observations are retained rather than described as zero long tasks; local measurements and live network measurements are separate workloads. CDN cache state and physical user performance are not controlled or claimed.
+
+The separate independent live visual suite passed **2/2 in 19.2 seconds**. It inspected all five viewport sizes and map/night/focus states, journal and loaded keepsake card. All captured pages loaded the verified `BZHl98rt` JS / `BDAJRPD0` CSS assets. There were no page errors, overflows, clipped marker labels or lazy-image failures; no P1/P2 visual issue remains in covered states. Nineteen `screenshots/live-*` files preserve the release evidence alongside original BEFORE and final local AFTER captures.
 
 Physical-device testing, Safari, Firefox, screen-reader usability testing, throttled mobile CPU/network and field performance are NOT TESTED. Local storage is browser-local and optional. Downloads depend on browser permissions. Rollback: revert a project commit and let the same free Pages workflow redeploy. Other repositories and Roblox were not modified.

@@ -1,0 +1,9 @@
+
+verify	Run npm test	2026-10-23T23:19:57.7124945Z ^[[2m      Tests ^[[22m ^[[1m^[[32m12 passed^[[39m^[[22m^[[90m (12)^[[39m
+verify	Run npm run build	2026-10-23T23:20:00.8966754Z ^[[2mdist/^[[22m^[[2massets/^[[22m^[[35mindex-BDAJRPD0.css  ^[[39m^[[1m^[[2m 23.28 kB^[[22m^[[1m^[[22m^[[2m тФВ gzip:  5.92 kB^[[22m
+verify	Run npm run build	2026-10-23T23:20:00.8973516Z ^[[2mdist/^[[22m^[[2massets/^[[22m^[[36mindex-BZHl98rt.js   ^[[39m^[[1m^[[2m251.78 kB^[[22m^[[1m^[[22m^[[2m тФВ gzip: 80.05 kB^[[22m^[[2m тФВ map: 1,118.24 kB^[[22m
+verify	Browser checks with runner Chrome	2026-10-23T23:20:27.8316743Z   18 passed (26.4s)
+verify	Run actions/upload-pages-artifact@v3	2026-10-23T23:20:34.1791477Z ./assets/index-BZHl98rt.js
+verify	Run actions/upload-pages-artifact@v3	2026-10-23T23:20:34.1792822Z ./assets/index-BDAJRPD0.css
+verify	Run actions/upload-pages-artifact@v3	2026-10-23T23:20:34.1793077Z ./assets/index-BZHl98rt.js.map
+

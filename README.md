@@ -2,7 +2,7 @@
 
 An original portfolio experience: an artistic atlas of an imagined alpine expedition, from moraine basin to the white horizon. Cold snow tones, procedural faceted terrain, topographic contours, red route markers and editorial typography.
 
-![GLACIER atlas desktop preview](qa/screenshots/after-desktop-1440-hero.png)
+![GLACIER atlas verified live desktop preview](qa/screenshots/live-desktop-1440-hero.png)
 
 ## Explore
 

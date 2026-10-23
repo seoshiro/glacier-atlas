@@ -1,0 +1,30 @@
+{
+  "verifiedAt": "2026-10-23T23:21:49.664Z",
+  "target": "https://seoshiro.github.io/glacier-atlas/",
+  "sourceCommit": "bbe7ffb8847a9ebf600f03e9d8ebc8b476c44a2d",
+  "htmlStatus": 200,
+  "htmlSha256": "45ee4e040f98d25e69b935c8ef566054073e4e0294fa8942601835c54282d712",
+  "assets": [
+    {
+      "url": "https://seoshiro.github.io/glacier-atlas/favicon.svg",
+      "bytes": 251,
+      "localSha256": "ca19359089e7e2b556a1d959294f60afa9f53d3f1e493c37221a95a482d0de8b",
+      "liveSha256": "ca19359089e7e2b556a1d959294f60afa9f53d3f1e493c37221a95a482d0de8b",
+      "matches": true
+    },
+    {
+      "url": "https://seoshiro.github.io/glacier-atlas/assets/index-BZHl98rt.js",
+      "bytes": 251775,
+      "localSha256": "0a2535bcbe667d5980d0bef9063d4971f047f489a6f114cd7884486b12fd1973",
+      "liveSha256": "0a2535bcbe667d5980d0bef9063d4971f047f489a6f114cd7884486b12fd1973",
+      "matches": true
+    },
+    {
+      "url": "https://seoshiro.github.io/glacier-atlas/assets/index-BDAJRPD0.css",
+      "bytes": 23284,
+      "localSha256": "e75039e67b4df1303817c10e5781e130cbfc653a3395089bf6034926974e0b7c",
+      "liveSha256": "e75039e67b4df1303817c10e5781e130cbfc653a3395089bf6034926974e0b7c",
+      "matches": true
+    }
+  ]
+}

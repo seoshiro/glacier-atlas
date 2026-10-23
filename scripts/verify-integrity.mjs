@@ -4,6 +4,7 @@ import {createHash} from 'node:crypto';
 const target=process.argv[2];
 if(!target) throw new Error('Provide the deployment URL.');
 const sourceCommit=process.argv[3] || 'not provided';
+const output=process.argv[4] || 'qa/live-integrity.json';
 const htmlResponse=await fetch(target,{cache:'no-store'});
 if(!htmlResponse.ok) throw new Error(`HTML returned ${htmlResponse.status}`);
 const html=await htmlResponse.text();
@@ -25,5 +26,5 @@ for(const reference of paths){
 }
 if(!assets.some(asset=>asset.url.endsWith('.js'))||!assets.some(asset=>asset.url.endsWith('.css'))) throw new Error('Missing application asset references.');
 const report={verifiedAt:new Date().toISOString(),target,sourceCommit,htmlStatus:htmlResponse.status,htmlSha256:sha256(html),assets};
-await writeFile('qa/live-integrity.json',JSON.stringify(report,null,2)+'\n');
+await writeFile(output,JSON.stringify(report,null,2)+'\n');
 process.stdout.write(JSON.stringify(report,null,2)+'\n');
